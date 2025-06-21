@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>モーダル付きポートフォリオ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 2em;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ポートフォリオ</h1>
+  <p>モーダル機能</p>
+
+  <button class="btn" id="openModal">実績を見る</button>
+
+  <!-- モーダル部分 -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>実績紹介</h2>
+      <ul>
+        <li>✔️ 求人紹介システム開発でおこなったモーダル化（HTML/CSS/JS）</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("openModal");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => modal.style.display = "block";
+    span.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+      if (event.target == modal) modal.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
