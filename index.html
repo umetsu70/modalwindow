@@ -8,10 +8,11 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #fce4ec);
       padding: 2em;
       text-align: center;
+      font-family: 'Noto Sans JP', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      color: #333;
     }
     h1 {
       color: #333;
@@ -80,12 +81,36 @@
         font-size: 0.9em;
       }
     }
+    .modal-content {
+  animation: fadeIn 0.4s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+    }
+    .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+    background-color: #0056b3;
+    }
   </style>
+
 </head>
 <body>
 
   <h1>モーダルウィンドウ</h1>
   <p>求人紹介サイト開発でのモーダル実装経験あり</p>
+  <p>環境：HTML、CSS、JS</p>
+  <p>ふわっと表示</p>
   <button class="btn" id="openModal">実績を見る</button>
 
   <div id="myModal" class="modal">
